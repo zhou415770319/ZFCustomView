@@ -13,12 +13,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ZFButtonToll.createButton(withTitle: "zhoufei", superView: self.view)
+        let btn = ZFButtonToll.createButton(withSuperView: self.view, frame: CGRect.init(x: 100, y: 100, width: 200, height: 200), title: "haha", tag: 1003, buttonType: ZFButtonType_custom)
+        btn?.addTarget(self, action: #selector(ViewController.clickBtn(sender:)), for: UIControlEvents.touchUpInside)
         
+//        ZFButtonToll.createButton(withSuperView: self.view, frame: CGRect.init(x: 100, y: 200, width: 200, height: 200), title: "hehe", tag: 1005, buttonType: ZFButtonType_custom, actionHandler: ButtonClickBlock)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func clickBtn(sender:UIButton){
+        
+        NSLog("%d", sender.tag)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
