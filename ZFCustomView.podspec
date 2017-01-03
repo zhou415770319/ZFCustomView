@@ -3,7 +3,7 @@ s.name             = "ZFCustomView"
 s.version          = "0.0.1"
 s.summary          = "A marquee view used on iOS."
 s.description      = <<-DESC
-It is a marquee view used on iOS, which implement by Objective-C.
+It is a marquee view used on iOS, which implement by Swift.
 DESC
 s.homepage         = "https://github.com/zhou415770319/ZFCustomView"
 # s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
