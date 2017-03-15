@@ -7,9 +7,7 @@
 //
 
 #import "ZFTableViewController.h"
-#import "ZFTableViewCell.h"
-#import "ZFTableViewCellModel.h"
-#import "ZFPopBaseViewController.h"
+
 @interface ZFTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -127,17 +125,18 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+//    NSString *identifier=@"indentifier";
+//    UITableViewCell *cell =(UITableViewCell *)([self.tableView dequeueReusableCellWithIdentifier:identifier]);
+//    return cell.frame.size.height;
+    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+
     return 70;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZFTableViewCellModel *cellInfo;
-    if (_isMoreSection == YES) {
-        cellInfo = self.cellInfos[indexPath.section][indexPath.row];
-    }else{
-        cellInfo = self.cellInfos[indexPath.row];
-    }
+    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+    
     ZFTableViewCell *cell;
     
     
@@ -191,13 +190,8 @@
     // 取消选中状态
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    ZFTableViewCellModel *cellInfo;
-    if (_isMoreSection == YES) {
-        cellInfo = self.cellInfos[indexPath.section][indexPath.row];
-    }else{
-        cellInfo = self.cellInfos[indexPath.row];
-    }
-    
+    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+
     if (cellInfo.PopToViewController) {
         if (NSClassFromString(cellInfo.PopToViewController)) {
             ZFPopBaseViewController *pop =[[NSClassFromString(cellInfo.PopToViewController) alloc] init];
@@ -209,6 +203,18 @@
 
     
 }
+
+//获取cellInfo
+-(ZFTableViewCellModel *)getCellInfo:(NSIndexPath *)indexPath{
+    ZFTableViewCellModel *cellInfo;
+    if (_isMoreSection == YES) {
+        cellInfo = self.cellInfos[indexPath.section][indexPath.row];
+    }else{
+        cellInfo = self.cellInfos[indexPath.row];
+    }
+    return cellInfo;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

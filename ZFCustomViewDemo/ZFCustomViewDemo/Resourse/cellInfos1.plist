@@ -14,11 +14,17 @@
 			<string>zhoufei</string>
 		</dict>
 		<dict>
+			<key>cellName</key>
+			<string>Demo4TableViewCell</string>
 			<key>img</key>
 			<string>1</string>
 			<key>des</key>
 			<string>hehe</string>
+			<key>subDes</key>
+			<string>hehe</string>
 			<key>title</key>
+			<string>xuejianbing</string>
+			<key>subTitle</key>
 			<string>xuejianbing</string>
 		</dict>
 		<dict>

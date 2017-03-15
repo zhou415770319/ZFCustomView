@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZFTableViewCell.h"
+#import "ZFPopBaseViewController.h"
 
 @interface ZFTableViewController : UITableViewController
 

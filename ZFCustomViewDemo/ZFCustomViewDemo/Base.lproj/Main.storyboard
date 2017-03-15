@@ -109,6 +109,56 @@
                                     <outlet property="title" destination="Jy6-RI-Vko" id="9mp-Ym-cgI"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Demo4TableViewCell" rowHeight="120" id="gXR-nR-DDz" customClass="Demo4TableViewCell">
+                                <rect key="frame" x="0.0" y="228" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXR-nR-DDz" id="VGu-3C-1yn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgQ-79-inS">
+                                            <rect key="frame" x="28" y="19.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ej-j9-D8N">
+                                            <rect key="frame" x="90" y="19.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0W-Gx-3SD">
+                                            <rect key="frame" x="28" y="79.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iy-yz-aYM">
+                                            <rect key="frame" x="90" y="79.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I0W-Gx-3SD" firstAttribute="leading" secondItem="VGu-3C-1yn" secondAttribute="leadingMargin" constant="20" id="2o0-uF-Pgn"/>
+                                        <constraint firstItem="4ej-j9-D8N" firstAttribute="leading" secondItem="TgQ-79-inS" secondAttribute="trailing" constant="20" id="3tF-4l-m1u"/>
+                                        <constraint firstItem="4ej-j9-D8N" firstAttribute="centerY" secondItem="TgQ-79-inS" secondAttribute="centerY" id="IRf-m3-oOu"/>
+                                        <constraint firstItem="I0W-Gx-3SD" firstAttribute="centerY" secondItem="VGu-3C-1yn" secondAttribute="centerY" constant="30" id="SOx-zl-V9A"/>
+                                        <constraint firstItem="4iy-yz-aYM" firstAttribute="centerY" secondItem="I0W-Gx-3SD" secondAttribute="centerY" id="Ska-z3-z3v"/>
+                                        <constraint firstItem="4iy-yz-aYM" firstAttribute="leading" secondItem="I0W-Gx-3SD" secondAttribute="trailing" constant="20" id="TM3-42-jVd"/>
+                                        <constraint firstItem="TgQ-79-inS" firstAttribute="centerY" secondItem="VGu-3C-1yn" secondAttribute="centerY" constant="-30" id="Y2F-jX-jai"/>
+                                        <constraint firstItem="TgQ-79-inS" firstAttribute="leading" secondItem="VGu-3C-1yn" secondAttribute="leadingMargin" constant="20" id="kLT-6q-Ww1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="des" destination="4ej-j9-D8N" id="cQ9-HX-dKc"/>
+                                    <outlet property="subDes" destination="4iy-yz-aYM" id="Efi-h8-J1f"/>
+                                    <outlet property="subTitle" destination="I0W-Gx-3SD" id="PH4-I0-Fjl"/>
+                                    <outlet property="title" destination="TgQ-79-inS" id="2NZ-t3-HMZ"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="QEJ-to-Lja" id="geW-zQ-ycr"/>
@@ -119,7 +169,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uup-XG-09w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="1200"/>
+            <point key="canvasLocation" x="560.79999999999995" y="1199.5502248875564"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="m17-VN-HC8">

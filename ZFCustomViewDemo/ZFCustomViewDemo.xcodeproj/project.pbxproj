@@ -25,6 +25,8 @@
 		914132041E79281900D87108 /* Demo3TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914132021E79281900D87108 /* Demo3TableViewCell.xib */; };
 		914132071E7938FC00D87108 /* PopDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132061E7938FC00D87108 /* PopDemoViewController.m */; };
 		9141320A1E79399800D87108 /* ZFPopBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132091E79399800D87108 /* ZFPopBaseViewController.m */; };
+		9141320D1E79473900D87108 /* Demo4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141320C1E79473900D87108 /* Demo4TableViewCell.m */; };
+		914132101E79482100D87108 /* DemoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141320F1E79482100D87108 /* DemoCellModel.m */; };
 		91DB506B1E714DD800CBDB90 /* ZFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DB506A1E714DD800CBDB90 /* ZFTableView.m */; };
 		91DB506E1E714F0600CBDB90 /* Profile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91DB506D1E714F0600CBDB90 /* Profile.plist */; };
 		91DB50711E714FD000CBDB90 /* cellInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91DB50701E714FD000CBDB90 /* cellInfos.plist */; };
@@ -108,6 +110,10 @@
 		914132061E7938FC00D87108 /* PopDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopDemoViewController.m; sourceTree = "<group>"; };
 		914132081E79399800D87108 /* ZFPopBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPopBaseViewController.h; sourceTree = "<group>"; };
 		914132091E79399800D87108 /* ZFPopBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPopBaseViewController.m; sourceTree = "<group>"; };
+		9141320B1E79473900D87108 /* Demo4TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo4TableViewCell.h; sourceTree = "<group>"; };
+		9141320C1E79473900D87108 /* Demo4TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo4TableViewCell.m; sourceTree = "<group>"; };
+		9141320E1E79482100D87108 /* DemoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCellModel.h; sourceTree = "<group>"; };
+		9141320F1E79482100D87108 /* DemoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCellModel.m; sourceTree = "<group>"; };
 		91DB50691E714DD800CBDB90 /* ZFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableView.h; sourceTree = "<group>"; };
 		91DB506A1E714DD800CBDB90 /* ZFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableView.m; sourceTree = "<group>"; };
 		91DB506D1E714F0600CBDB90 /* Profile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Profile.plist; sourceTree = "<group>"; };
@@ -254,6 +260,8 @@
 				914131FB1E791CB300D87108 /* DemoTableViewCell.m */,
 				914131FD1E79240C00D87108 /* Demo2TableViewCell.h */,
 				914131FE1E79240C00D87108 /* Demo2TableViewCell.m */,
+				9141320B1E79473900D87108 /* Demo4TableViewCell.h */,
+				9141320C1E79473900D87108 /* Demo4TableViewCell.m */,
 				914132001E79281900D87108 /* Demo3TableViewCell.h */,
 				914132011E79281900D87108 /* Demo3TableViewCell.m */,
 				914132021E79281900D87108 /* Demo3TableViewCell.xib */,
@@ -339,6 +347,8 @@
 				91DB50B01E728DED00CBDB90 /* TestLableCell.xib */,
 				91DB50A71E724A4C00CBDB90 /* TestCellModel.h */,
 				91DB50A81E724A4C00CBDB90 /* TestCellModel.m */,
+				9141320E1E79482100D87108 /* DemoCellModel.h */,
+				9141320F1E79482100D87108 /* DemoCellModel.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -500,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				914132101E79482100D87108 /* DemoCellModel.m in Sources */,
 				914131F91E791ACA00D87108 /* DemoTableViewController.m in Sources */,
 				91DB509B1E71546200CBDB90 /* ZFTableViewController.m in Sources */,
 				91DB50A61E72472F00CBDB90 /* ZFTableViewCellModel.m in Sources */,
@@ -507,6 +518,7 @@
 				91DB50AD1E7287FC00CBDB90 /* TestViewController.m in Sources */,
 				9141320A1E79399800D87108 /* ZFPopBaseViewController.m in Sources */,
 				91DB50A31E723EF900CBDB90 /* ZFTableViewCell.m in Sources */,
+				9141320D1E79473900D87108 /* Demo4TableViewCell.m in Sources */,
 				913D94421E1B53930070E853 /* ViewController.swift in Sources */,
 				914132071E7938FC00D87108 /* PopDemoViewController.m in Sources */,
 				913D94401E1B53930070E853 /* AppDelegate.swift in Sources */,

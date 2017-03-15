@@ -9,6 +9,7 @@
 #import "DemoTableViewController.h"
 #import "TestCellModel.h"
 #import "DemoTableViewCell.h"
+#import "DemoCellModel.h"
 @interface DemoTableViewController ()
 
 @end
@@ -46,7 +47,7 @@
     for (NSArray *temArr in arr) {
         NSMutableArray *temMArr = [NSMutableArray arrayWithCapacity:1];
         for (NSDictionary *dict in temArr) {
-            TestCellModel *model = [[TestCellModel alloc]initWithDict:dict];
+            DemoCellModel *model = [[DemoCellModel alloc]initWithDict:dict];
             if ([dict objectForKey:@"cellName"]) {
                 model.cellName = [dict objectForKey:@"cellName"];
 
