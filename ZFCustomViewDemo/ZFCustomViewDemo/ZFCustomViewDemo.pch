@@ -1,0 +1,19 @@
+//
+//  ZFCustomViewDemo.pch
+//  ZFCustomViewDemo
+//
+//  Created by 周飞 on 2017/3/15.
+//  Copyright © 2017年 ZF. All rights reserved.
+//
+
+#ifndef ZFCustomViewDemo_pch
+#define ZFCustomViewDemo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* ZFCustomViewDemo_pch */
+
+
+#define SCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)

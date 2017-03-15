@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>cellName</key>
+			<string>Demo2TableViewCell</string>
+			<key>img</key>
+			<string>2</string>
+			<key>des</key>
+			<string>hehe</string>
+			<key>title</key>
+			<string>zhoufei</string>
+		</dict>
+		<dict>
+			<key>img</key>
+			<string>1</string>
+			<key>des</key>
+			<string>hehe</string>
+			<key>title</key>
+			<string>xuejianbing</string>
+		</dict>
+		<dict>
+			<key>xibCellName</key>
+			<string>Demo3TableViewCell</string>
+			<key>img</key>
+			<string>0</string>
+			<key>des</key>
+			<string>hehe</string>
+			<key>title</key>
+			<string>mengdemei</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>img</key>
+			<string>2</string>
+			<key>des</key>
+			<string>hehe</string>
+			<key>title</key>
+			<string>zhanglianlian</string>
+		</dict>
+		<dict>
+			<key>img</key>
+			<string>1</string>
+			<key>des</key>
+			<string>hehe</string>
+			<key>title</key>
+			<string>wangjiaoyan</string>
+		</dict>
+		<dict>
+			<key>img</key>
+			<string>0</string>
+			<key>des</key>
+			<string>hehe</string>
+			<key>title</key>
+			<string>qianqian</string>
+		</dict>
+	</array>
+</array>
+</plist>

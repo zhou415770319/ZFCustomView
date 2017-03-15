@@ -24,8 +24,6 @@ typedef void (^ButtonClickBlock)(UIButton * btn);
 @interface ZFButtonToll : NSObject
 
 
-
-
 /**
  创建按钮   监听点击事件需要    addTarget
 
