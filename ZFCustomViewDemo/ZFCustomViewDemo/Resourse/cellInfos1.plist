@@ -40,6 +40,8 @@
 	</array>
 	<array>
 		<dict>
+			<key>classCellName</key>
+			<string>ClassTableViewCell</string>
 			<key>img</key>
 			<string>2</string>
 			<key>des</key>
@@ -48,6 +50,10 @@
 			<string>sscdf</string>
 		</dict>
 		<dict>
+			<key>classCellName</key>
+			<string>FrameTableViewCell</string>
+			<key>isCustomCell</key>
+			<true/>
 			<key>img</key>
 			<string>1</string>
 			<key>des</key>

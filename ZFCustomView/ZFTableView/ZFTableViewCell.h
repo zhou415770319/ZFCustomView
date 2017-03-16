@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ZFTableViewCellModel.h"
-@interface ZFTableViewCell : UITableViewCell
+#import "ZFTableViewCellFrameModel.h"
 
+@interface ZFTableViewCell : UITableViewCell
+//CellModel
 @property(nonatomic,retain)ZFTableViewCellModel *cellInfo;
+//CellFrameModel
+@property(nonatomic,retain)ZFTableViewCellFrameModel *frameCellInfo;
+
+
 
 //-(id)initWithModel:(ZFTableViewCellModel *)model;
 

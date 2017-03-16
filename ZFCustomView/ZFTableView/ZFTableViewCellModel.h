@@ -13,9 +13,14 @@
 //已经注册的cell (传入cellName是为了获取复用的cell)
 @property(nonatomic,copy)NSString *cellName;
 //需要注册class的cell
-@property(nonatomic,copy)NSString *cellClassName;
+@property(nonatomic,copy)NSString *classCellName;
 //需要注册xib的cell
 @property(nonatomic,copy)NSString *xibCellName;
+
+/**
+ *  是否自定义cell，代码自定义frame
+ */
+@property(nonatomic,assign)BOOL isCustomCell;
 
 
 //没有设置cell类型的情况下可以设置tableViewCellStyle 默认为UITableViewCellStyleDefault

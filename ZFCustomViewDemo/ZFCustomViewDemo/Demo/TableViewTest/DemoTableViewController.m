@@ -50,13 +50,16 @@
             DemoCellModel *model = [[DemoCellModel alloc]initWithDict:dict];
             if ([dict objectForKey:@"cellName"]) {
                 model.cellName = [dict objectForKey:@"cellName"];
+                
 
             }else if([dict objectForKey:@"xibCellName"]) {
                 model.xibCellName = [dict objectForKey:@"xibCellName"];
                 
-            }else if([dict objectForKey:@"cellClassName"]) {
-                model.cellClassName = [dict objectForKey:@"cellClassName"];
-                
+            }else if([dict objectForKey:@"classCellName"]) {
+                model.classCellName = [dict objectForKey:@"classCellName"];
+                if ([dict objectForKey:@"isCustomCell"]) {
+                    model.isCustomCell = [dict objectForKey:@"isCustomCell"];
+                }
             }else{
                 model.cellName = @"DemoTableViewCell";
 

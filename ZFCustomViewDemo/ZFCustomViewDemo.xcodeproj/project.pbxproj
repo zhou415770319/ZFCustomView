@@ -27,6 +27,11 @@
 		9141320A1E79399800D87108 /* ZFPopBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132091E79399800D87108 /* ZFPopBaseViewController.m */; };
 		9141320D1E79473900D87108 /* Demo4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141320C1E79473900D87108 /* Demo4TableViewCell.m */; };
 		914132101E79482100D87108 /* DemoCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141320F1E79482100D87108 /* DemoCellModel.m */; };
+		914132131E7A933500D87108 /* ClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132121E7A933500D87108 /* ClassTableViewCell.m */; };
+		914132161E7ACD5200D87108 /* FrameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132151E7ACD5200D87108 /* FrameTableViewCell.m */; };
+		914132191E7ACDE800D87108 /* ZFTableViewCellFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132181E7ACDE800D87108 /* ZFTableViewCellFrameModel.m */; };
+		9141321C1E7ACE8A00D87108 /* FrameTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141321B1E7ACE8A00D87108 /* FrameTableViewCellModel.m */; };
+		914132201E7ACFB400D87108 /* ZFStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141321F1E7ACFB400D87108 /* ZFStringTool.m */; };
 		91DB506B1E714DD800CBDB90 /* ZFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DB506A1E714DD800CBDB90 /* ZFTableView.m */; };
 		91DB506E1E714F0600CBDB90 /* Profile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91DB506D1E714F0600CBDB90 /* Profile.plist */; };
 		91DB50711E714FD000CBDB90 /* cellInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91DB50701E714FD000CBDB90 /* cellInfos.plist */; };
@@ -114,6 +119,16 @@
 		9141320C1E79473900D87108 /* Demo4TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Demo4TableViewCell.m; sourceTree = "<group>"; };
 		9141320E1E79482100D87108 /* DemoCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCellModel.h; sourceTree = "<group>"; };
 		9141320F1E79482100D87108 /* DemoCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCellModel.m; sourceTree = "<group>"; };
+		914132111E7A933500D87108 /* ClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassTableViewCell.h; sourceTree = "<group>"; };
+		914132121E7A933500D87108 /* ClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassTableViewCell.m; sourceTree = "<group>"; };
+		914132141E7ACD5200D87108 /* FrameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameTableViewCell.h; sourceTree = "<group>"; };
+		914132151E7ACD5200D87108 /* FrameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameTableViewCell.m; sourceTree = "<group>"; };
+		914132171E7ACDE800D87108 /* ZFTableViewCellFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableViewCellFrameModel.h; sourceTree = "<group>"; };
+		914132181E7ACDE800D87108 /* ZFTableViewCellFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableViewCellFrameModel.m; sourceTree = "<group>"; };
+		9141321A1E7ACE8A00D87108 /* FrameTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameTableViewCellModel.h; sourceTree = "<group>"; };
+		9141321B1E7ACE8A00D87108 /* FrameTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameTableViewCellModel.m; sourceTree = "<group>"; };
+		9141321E1E7ACFB400D87108 /* ZFStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFStringTool.h; sourceTree = "<group>"; };
+		9141321F1E7ACFB400D87108 /* ZFStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFStringTool.m; sourceTree = "<group>"; };
 		91DB50691E714DD800CBDB90 /* ZFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableView.h; sourceTree = "<group>"; };
 		91DB506A1E714DD800CBDB90 /* ZFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableView.m; sourceTree = "<group>"; };
 		91DB506D1E714F0600CBDB90 /* Profile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Profile.plist; sourceTree = "<group>"; };
@@ -256,6 +271,12 @@
 				914131F81E791ACA00D87108 /* DemoTableViewController.m */,
 				914132051E7938FC00D87108 /* PopDemoViewController.h */,
 				914132061E7938FC00D87108 /* PopDemoViewController.m */,
+				914132111E7A933500D87108 /* ClassTableViewCell.h */,
+				914132121E7A933500D87108 /* ClassTableViewCell.m */,
+				914132141E7ACD5200D87108 /* FrameTableViewCell.h */,
+				914132151E7ACD5200D87108 /* FrameTableViewCell.m */,
+				9141321A1E7ACE8A00D87108 /* FrameTableViewCellModel.h */,
+				9141321B1E7ACE8A00D87108 /* FrameTableViewCellModel.m */,
 				914131FA1E791CB300D87108 /* DemoTableViewCell.h */,
 				914131FB1E791CB300D87108 /* DemoTableViewCell.m */,
 				914131FD1E79240C00D87108 /* Demo2TableViewCell.h */,
@@ -269,6 +290,15 @@
 			path = TableViewTest;
 			sourceTree = "<group>";
 		};
+		9141321D1E7ACFB400D87108 /* Tolls */ = {
+			isa = PBXGroup;
+			children = (
+				9141321E1E7ACFB400D87108 /* ZFStringTool.h */,
+				9141321F1E7ACFB400D87108 /* ZFStringTool.m */,
+			);
+			path = Tolls;
+			sourceTree = "<group>";
+		};
 		91DB4FFE1E70E9AD00CBDB90 /* ZFTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +308,8 @@
 				91DB50A21E723EF900CBDB90 /* ZFTableViewCell.m */,
 				91DB50A41E72472F00CBDB90 /* ZFTableViewCellModel.h */,
 				91DB50A51E72472F00CBDB90 /* ZFTableViewCellModel.m */,
+				914132171E7ACDE800D87108 /* ZFTableViewCellFrameModel.h */,
+				914132181E7ACDE800D87108 /* ZFTableViewCellFrameModel.m */,
 				91DB50991E71546200CBDB90 /* ZFTableViewController.h */,
 				91DB509A1E71546200CBDB90 /* ZFTableViewController.m */,
 				914132081E79399800D87108 /* ZFPopBaseViewController.h */,
@@ -337,6 +369,7 @@
 		91DB508F1E71508300CBDB90 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				9141321D1E7ACFB400D87108 /* Tolls */,
 				914131F61E791AAF00D87108 /* TableViewTest */,
 				91DB50AB1E7287FC00CBDB90 /* TestViewController.h */,
 				91DB50AC1E7287FC00CBDB90 /* TestViewController.m */,
@@ -511,9 +544,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				914132101E79482100D87108 /* DemoCellModel.m in Sources */,
+				9141321C1E7ACE8A00D87108 /* FrameTableViewCellModel.m in Sources */,
 				914131F91E791ACA00D87108 /* DemoTableViewController.m in Sources */,
+				914132131E7A933500D87108 /* ClassTableViewCell.m in Sources */,
 				91DB509B1E71546200CBDB90 /* ZFTableViewController.m in Sources */,
 				91DB50A61E72472F00CBDB90 /* ZFTableViewCellModel.m in Sources */,
+				914132161E7ACD5200D87108 /* FrameTableViewCell.m in Sources */,
 				914131FC1E791CB300D87108 /* DemoTableViewCell.m in Sources */,
 				91DB50AD1E7287FC00CBDB90 /* TestViewController.m in Sources */,
 				9141320A1E79399800D87108 /* ZFPopBaseViewController.m in Sources */,
@@ -523,6 +559,7 @@
 				914132071E7938FC00D87108 /* PopDemoViewController.m in Sources */,
 				913D94401E1B53930070E853 /* AppDelegate.swift in Sources */,
 				91DB50A91E724A4C00CBDB90 /* TestCellModel.m in Sources */,
+				914132191E7ACDE800D87108 /* ZFTableViewCellFrameModel.m in Sources */,
 				914131FF1E79240C00D87108 /* Demo2TableViewCell.m in Sources */,
 				913D947A1E1B83EC0070E853 /* UIButton+CountDown.m in Sources */,
 				913D94721E1B54740070E853 /* ZFButtonToll.m in Sources */,
@@ -532,6 +569,7 @@
 				91DB50A01E723DA800CBDB90 /* TestCell.m in Sources */,
 				91DB506B1E714DD800CBDB90 /* ZFTableView.m in Sources */,
 				913D947D1E1B967F0070E853 /* demoViewController.m in Sources */,
+				914132201E7ACFB400D87108 /* ZFStringTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

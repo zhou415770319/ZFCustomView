@@ -45,41 +45,62 @@
     
     if (_cellInfos != cellInfos) {
         _cellInfos = cellInfos;
-    ZFTableViewCellModel *cellInfo;
-    //cellName 注册
-    NSMutableArray *arr =[NSMutableArray arrayWithCapacity:1];
-    //xibcellName 注册
-    NSMutableArray *xibArr =[NSMutableArray arrayWithCapacity:1];
-    for (id obj in cellInfos) {
-        if ([obj isKindOfClass:[NSArray class]]) {
-            self.isMoreSection = YES;
-            for (id obj2 in obj) {//多组的情况
-                cellInfo = obj2;
-                if (cellInfo.cellClassName) {
-                    [arr addObject:cellInfo.cellClassName];
+        ZFTableViewCellModel *cellInfo;
+        //cellName 注册
+        NSMutableArray *arr =[NSMutableArray arrayWithCapacity:1];
+        //xibcellName 注册
+        NSMutableArray *xibArr =[NSMutableArray arrayWithCapacity:1];
+        //自定义Frame的model数组
+        NSMutableArray * frameModelArr = [NSMutableArray arrayWithCapacity:1];
+        
+        
+        for (id obj in cellInfos) {
+            if ([obj isKindOfClass:[NSArray class]]) {//多组的情况
+                self.isMoreSection = YES;
+                NSMutableArray * frameModelTemArr = [NSMutableArray arrayWithCapacity:1];
+                
+                for (id obj2 in obj) {
+                    
+                    cellInfo = obj2;
+                    if (cellInfo.classCellName) {
+                        [arr addObject:cellInfo.classCellName];
+                        if (cellInfo.isCustomCell == YES) {
+                            ZFTableViewCellFrameModel *frameM = [[ZFTableViewCellFrameModel alloc] init];
+                            frameM.cellInfo = cellInfo;
+                            [frameModelTemArr addObject:frameM];
+                        }
+                    }
+                    if (cellInfo.xibCellName) {
+                        [xibArr addObject:cellInfo.xibCellName];
+                    }
+                }
+                [frameModelArr addObject:frameModelTemArr];
+            }else{//不是多组的情况
+                cellInfo = obj;
+                if (cellInfo.classCellName) {
+                    [arr addObject:cellInfo.classCellName];
+                    if (cellInfo.isCustomCell == YES) {
+                        ZFTableViewCellFrameModel *frameM = [[ZFTableViewCellFrameModel alloc] init];
+                        frameM.cellInfo = cellInfo;
+                        [frameModelArr addObject:frameM];
+                    }
                 }
                 if (cellInfo.xibCellName) {
                     [xibArr addObject:cellInfo.xibCellName];
                 }
             }
-        }else{//不是多组的情况
-            cellInfo = obj;
-            if (cellInfo.cellClassName) {
-                [arr addObject:cellInfo.cellClassName];
-            }
-            if (cellInfo.xibCellName) {
-                [xibArr addObject:cellInfo.xibCellName];
-            }
+            
         }
+        //如果是自定义的cell。。。
+        if (cellInfo.isCustomCell == YES) {
+            _cellInfos = frameModelArr;
+        }
+        [self registerCell:arr xib:xibArr];
+        [self.tableView reloadData];
         
     }
-    
-    [self registerCell:arr xib:xibArr];
-    [self.tableView reloadData];
-
-    }
 }
-
+//注册classCell和xibCell
 -(void)registerCell:(NSMutableArray *)cellArr xib:(NSMutableArray *)xibArr{
     
     NSSet *set = [NSSet setWithArray:cellArr];
@@ -98,29 +119,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     if (_isMoreSection == YES) {
         return self.cellInfos.count;
     }
     return 1;
-   
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     if (_isMoreSection == YES) {
         NSArray *arr = self.cellInfos[section];
         return arr.count;
     }
     else{
         return self.cellInfos.count;
-
+        
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
     
+    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+
+    if (cellInfo.isCustomCell == YES) {
+        return 150;
+    }
     
     ZFTableViewCell *cell = [self getCellIndex:indexPath];
     
@@ -136,13 +161,13 @@
     ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
     
     ZFTableViewCell *cell;
-//    = [self getCellIndex:indexPath cellInfo:cellInfo];
+    //    = [self getCellIndex:indexPath cellInfo:cellInfo];
     
     if (cell == nil) {
         
-        if (cellInfo.cellClassName) {//如果cellClassName存在
+        if (cellInfo.classCellName) {//如果cellClassName存在
             //取出已注册的cell
-            cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.cellClassName forIndexPath:indexPath];
+            cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.classCellName forIndexPath:indexPath];
         }else if (cellInfo.xibCellName){//如果XibcellNmae存在
             //取出已注册的cell
             
@@ -165,14 +190,14 @@
                 cell.imageView.image =[UIImage imageNamed:cellInfo.imgName];
             }
         }
-//        cell = [[NSClassFromString(cellInfo.cellName) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellInfo.cellName];
+        //        cell = [[NSClassFromString(cellInfo.cellName) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellInfo.cellName];
         
-//        cell.textLabel.text = @"kjskjdnks";
+        //        cell.textLabel.text = @"kjskjdnks";
     }
     UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-1, self.view.frame.size.width-20, 1)];
     v.backgroundColor = [UIColor lightGrayColor];
     [cell.contentView addSubview:v];
-
+    
     cell.cellInfo = cellInfo;
     
     return cell;
@@ -189,7 +214,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
-
+    
     if (cellInfo.PopToViewController) {
         if (NSClassFromString(cellInfo.PopToViewController)) {
             ZFPopBaseViewController *pop =[[NSClassFromString(cellInfo.PopToViewController) alloc] init];
@@ -198,7 +223,7 @@
             [self.navigationController pushViewController:pop animated:YES];
         }
     }
-
+    
     
 }
 
@@ -216,9 +241,9 @@
 -(ZFTableViewCell *)getCellIndex:(NSIndexPath *)indexPath{
     ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
     ZFTableViewCell *cell;
-    if (cellInfo.cellClassName) {//如果cellClassName存在
+    if (cellInfo.classCellName) {//如果cellClassName存在
         //取出已注册的cell
-        cell = [self.tableView dequeueReusableCellWithIdentifier:cellInfo.cellClassName];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellInfo.classCellName];
     }else if (cellInfo.xibCellName){//如果XibcellNmae存在
         //取出已注册的cell
         
@@ -238,47 +263,47 @@
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
