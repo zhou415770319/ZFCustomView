@@ -10,4 +10,22 @@
 
 @implementation ZFTableViewCellModel
 
+-(id)initWithDict:(NSDictionary *)dict{
+    if ([dict objectForKey:@"title"]) {
+        self.title = [dict objectForKey:@"title"];
+
+    }
+    if ([dict objectForKey:@"img"]) {
+        self.imgName = [dict objectForKey:@"img"];
+        
+    }
+    if ([dict objectForKey:@"des"]) {
+        self.des = [dict objectForKey:@"des"];
+        
+    }
+    
+    return self;
+    
+}
+
 @end

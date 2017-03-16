@@ -169,7 +169,7 @@
         
 //        cell.textLabel.text = @"kjskjdnks";
     }
-    UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-1, SCREENWIDTH-20, 1)];
+    UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-1, self.view.frame.size.width-20, 1)];
     v.backgroundColor = [UIColor lightGrayColor];
     [cell.contentView addSubview:v];
 

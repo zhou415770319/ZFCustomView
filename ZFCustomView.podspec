@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 s.name             = "ZFCustomView"
-s.version          = "0.0.1"
-s.summary          = "A marquee view used on iOS."
+s.version          = "0.1.1"
+s.summary          = "A custom view used on iOS."
 s.description      = <<-DESC
 It is a marquee view used on iOS, which implement by Swift.
 DESC

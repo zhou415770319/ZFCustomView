@@ -57,7 +57,7 @@
 
 -(void)initViews{
     
-    self.tableV = [[ZFTableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT)];
+    self.tableV = [[ZFTableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 //    self.tableV.backgroundColor =[UIColor redColor];
     [self.view addSubview:self.tableV];
     
