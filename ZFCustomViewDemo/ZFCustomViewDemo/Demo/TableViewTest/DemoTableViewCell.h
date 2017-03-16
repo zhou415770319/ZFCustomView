@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZFTableViewCell.h"
 
 @interface DemoTableViewCell : ZFTableViewCell
 

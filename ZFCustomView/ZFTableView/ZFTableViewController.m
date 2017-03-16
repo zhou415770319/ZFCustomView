@@ -87,15 +87,10 @@
         [self.tableView registerClass:[NSClassFromString(s1) class] forCellReuseIdentifier:s1];
     }
     
-    
     NSSet *xibSet = [NSSet setWithArray:xibArr];
     for (NSString * s1 in xibSet) {
         [self.tableView registerNib:[UINib nibWithNibName:s1 bundle:nil] forCellReuseIdentifier:s1];
     }
-    
-//    [self.tableView registerNib:[UINib nibWithNibName:@"Demo3TableViewCell" bundle:nil] forCellReuseIdentifier:@"Demo3TableViewCell"];
-    
-//    [self.tableView registerClass:[NSClassFromString(@"DemoTableViewCell") class] forCellReuseIdentifier:@"DemoTableViewCell"];
     
 }
 
@@ -124,12 +119,15 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    NSString *identifier=@"indentifier";
-//    UITableViewCell *cell =(UITableViewCell *)([self.tableView dequeueReusableCellWithIdentifier:identifier]);
-//    return cell.frame.size.height;
-    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
 
+    
+    
+    ZFTableViewCell *cell = [self getCellIndex:indexPath];
+    
+    if (cell != nil) {
+        return cell.frame.size.height;
+    }
+    
     return 70;
 }
 
@@ -138,7 +136,7 @@
     ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
     
     ZFTableViewCell *cell;
-    
+//    = [self getCellIndex:indexPath cellInfo:cellInfo];
     
     if (cell == nil) {
         
@@ -213,6 +211,29 @@
         cellInfo = self.cellInfos[indexPath.row];
     }
     return cellInfo;
+}
+
+-(ZFTableViewCell *)getCellIndex:(NSIndexPath *)indexPath{
+    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+    ZFTableViewCell *cell;
+    if (cellInfo.cellClassName) {//如果cellClassName存在
+        //取出已注册的cell
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellInfo.cellClassName];
+    }else if (cellInfo.xibCellName){//如果XibcellNmae存在
+        //取出已注册的cell
+        
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellInfo.xibCellName];
+        
+    }else if(cellInfo.cellName){
+        
+        cell =[self.tableView dequeueReusableCellWithIdentifier:cellInfo.cellName];
+        
+    }else{
+        
+        cell = nil;
+    }
+    
+    return cell;
 }
 
 

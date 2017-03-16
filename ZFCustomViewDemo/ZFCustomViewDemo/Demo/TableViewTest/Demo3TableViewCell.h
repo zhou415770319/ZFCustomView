@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZFTableViewCell.h"
+
 @interface Demo3TableViewCell : ZFTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *title;
 

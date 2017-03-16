@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZFPopBaseViewController.h"
 @interface PopDemoViewController : ZFPopBaseViewController
 
 @end
