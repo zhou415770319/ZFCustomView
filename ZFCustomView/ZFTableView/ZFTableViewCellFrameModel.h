@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ZFTableViewCellModel.h"
 @interface ZFTableViewCellFrameModel : NSObject
+
 
 @property(nonatomic,strong)ZFTableViewCellModel *cellInfo;
 
