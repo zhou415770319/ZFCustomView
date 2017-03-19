@@ -19,6 +19,7 @@
 
 
 -(void)setCellInfo:(ZFTableViewCellModel *)cellInfo{
+    [super setCellInfo:cellInfo];
     //计算 标题的frame
     [self setupTitleFrame];
     
@@ -28,24 +29,36 @@
     //计算 图片的frame
 //    [self setupImgFrame];
 //    
-//    //计算 lineViewF的frame
-//    [self setupLineViewFrame];
+    //计算 lineViewF的frame
+    [self setupLineViewFrame];
     
     
-//    _cellHeightF =CGRectGetMaxY(_lineViewF);
+    self.cellHeightF = CGRectGetMaxY(_lineViewF);
+
+//    CGRectGetMaxY(_desF);
     
     
 }
 
 
 -(void)setupTitleFrame{
-    _titleF =CGRectMake(PADDING_VIEW_VIEW, PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, [ZFStringTool getStrSize:self.cellInfo.title andTexFont:[UIFont systemFontOfSize:18.0] andMaxSize:CGSizeMake(([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, 90)].height);
+    _titleF = CGRectMake(10, 10, 100, 30);
+    
+//    _titleF =CGRectMake(PADDING_VIEW_VIEW, PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, [ZFStringTool getStrSize:self.cellInfo.title andTexFont:[UIFont systemFontOfSize:18.0] andMaxSize:CGSizeMake(([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, 90)].height);
 }
 
 -(void)setupdesFrame{
-    _desF =CGRectMake(PADDING_VIEW_VIEW*2+ICONWIDTH, CGRectGetMaxY(_titleF)+PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-(PADDING_VIEW_VIEW*3+ICONWIDTH), 60);
+    
+    _desF = CGRectMake(110, 50, 100, 30);
+//    _desF =CGRectMake(PADDING_VIEW_VIEW, CGRectGetMaxY(_titleF)+PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-(PADDING_VIEW_VIEW*2), 60);
 }
 
+-(void)setupLineViewFrame{
+    
+        
+        _lineViewF =CGRectMake(PADDING_VIEW_VIEW, CGRectGetMaxY(_desF)+PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, 1);
+        
+}
 
 
 @end

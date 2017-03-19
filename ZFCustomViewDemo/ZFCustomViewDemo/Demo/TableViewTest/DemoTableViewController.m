@@ -59,6 +59,7 @@
                 model.classCellName = [dict objectForKey:@"classCellName"];
                 if ([dict objectForKey:@"isCustomCell"]) {
                     model.isCustomCell = [dict objectForKey:@"isCustomCell"];
+                    model.framModelName = @"FrameTableViewCellModel";
                 }
             }else{
                 model.cellName = @"DemoTableViewCell";

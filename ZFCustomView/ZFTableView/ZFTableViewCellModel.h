@@ -22,6 +22,11 @@
  */
 @property(nonatomic,assign)BOOL isCustomCell;
 
+/**
+ *  如果是自定义cell需传入自定义cell的name
+ */
+@property(nonatomic,copy)NSString *framModelName;
+
 
 //没有设置cell类型的情况下可以设置tableViewCellStyle 默认为UITableViewCellStyleDefault
 @property(nonatomic)UITableViewCellStyle tableViewCellStyle;

@@ -13,6 +13,7 @@
 -(void)setCellInfo:(ZFTableViewCellModel *)cellInfo{
     _cellInfo =cellInfo;
     
+    _cellHeightF = 40;
 }
 
 

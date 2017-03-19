@@ -20,4 +20,8 @@
 /*图片frame*/
 @property (nonatomic, assign) CGRect imgF;
 
+
+/** lineView的frame*/
+@property (nonatomic, assign) CGRect lineViewF;
+
 @end

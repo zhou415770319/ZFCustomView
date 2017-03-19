@@ -44,45 +44,67 @@
 -(void)setCellInfos:(NSMutableArray *)cellInfos{
     
     if (_cellInfos != cellInfos) {
-        _cellInfos = cellInfos;
         ZFTableViewCellModel *cellInfo;
         //cellName 注册
         NSMutableArray *arr =[NSMutableArray arrayWithCapacity:1];
         //xibcellName 注册
         NSMutableArray *xibArr =[NSMutableArray arrayWithCapacity:1];
         //自定义Frame的model数组
-        NSMutableArray * frameModelArr = [NSMutableArray arrayWithCapacity:1];
+        NSMutableArray * frameModelArr = cellInfos;
         
-        
-        for (id obj in cellInfos) {
+        for (int i =0;i<cellInfos.count;i++) {
+            id obj = cellInfos[i];
             if ([obj isKindOfClass:[NSArray class]]) {//多组的情况
                 self.isMoreSection = YES;
-                NSMutableArray * frameModelTemArr = [NSMutableArray arrayWithCapacity:1];
-                
-                for (id obj2 in obj) {
+                NSMutableArray * frameModelTemArr = [NSMutableArray arrayWithArray:(NSArray *)obj];
+                for (int j =0;j<frameModelTemArr.count;j++) {
                     
-                    cellInfo = obj2;
+                    if ([frameModelTemArr[j] isKindOfClass:[ZFTableViewCellFrameModel class]]) {
+                        ZFTableViewCellFrameModel *fm =frameModelTemArr[j];
+                        
+                        cellInfo =fm.cellInfo;
+                    }else{
+                        cellInfo = frameModelTemArr[j];
+                    }
                     if (cellInfo.classCellName) {
                         [arr addObject:cellInfo.classCellName];
                         if (cellInfo.isCustomCell == YES) {
-                            ZFTableViewCellFrameModel *frameM = [[ZFTableViewCellFrameModel alloc] init];
-                            frameM.cellInfo = cellInfo;
-                            [frameModelTemArr addObject:frameM];
+                            if ([cellInfo.framModelName isEqualToString:@""]) {
+                                NSLog(@"没有设置自定义cell的framModelName");
+                            }else{
+                                ZFTableViewCellFrameModel *frameM = [[NSClassFromString(cellInfo.framModelName) alloc] init];
+                                
+                                frameM.cellInfo = cellInfo;
+                                [frameModelTemArr replaceObjectAtIndex:j withObject:frameM];
+                            }
+                            
                         }
                     }
                     if (cellInfo.xibCellName) {
                         [xibArr addObject:cellInfo.xibCellName];
                     }
                 }
-                [frameModelArr addObject:frameModelTemArr];
+                [frameModelArr replaceObjectAtIndex:i withObject:frameModelTemArr];
             }else{//不是多组的情况
-                cellInfo = obj;
+                if ([obj isKindOfClass:[ZFTableViewCellFrameModel class]]) {
+                    ZFTableViewCellFrameModel *fm =obj;
+                    
+                    cellInfo =fm.cellInfo;
+                }else{
+                    cellInfo = obj;
+                }
+
                 if (cellInfo.classCellName) {
                     [arr addObject:cellInfo.classCellName];
                     if (cellInfo.isCustomCell == YES) {
-                        ZFTableViewCellFrameModel *frameM = [[ZFTableViewCellFrameModel alloc] init];
-                        frameM.cellInfo = cellInfo;
-                        [frameModelArr addObject:frameM];
+                        if ([cellInfo.framModelName isEqualToString:@""]) {
+                            NSLog(@"没有设置自定义cell的framModelName");
+                        }else{
+                            ZFTableViewCellFrameModel *frameM = [[NSClassFromString(cellInfo.framModelName) alloc] init];
+                            
+                            frameM.cellInfo = cellInfo;
+                            [frameModelArr replaceObjectAtIndex:i withObject:frameM];
+                        }
                     }
                 }
                 if (cellInfo.xibCellName) {
@@ -91,10 +113,13 @@
             }
             
         }
-        //如果是自定义的cell。。。
-        if (cellInfo.isCustomCell == YES) {
-            _cellInfos = frameModelArr;
-        }
+        //        //如果是自定义的cell。。。
+        //        if (cellInfo.isCustomCell == YES) {
+        //            _cellInfos = frameModelArr;
+        //        }
+        
+        _cellInfos = frameModelArr;
+        
         [self registerCell:arr xib:xibArr];
         [self.tableView reloadData];
         
@@ -141,64 +166,82 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
-
-    if (cellInfo.isCustomCell == YES) {
-        return 150;
+    //    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+    //
+    //    if (cellInfo.isCustomCell == YES) {
+    //        return cellInfo.ce;
+    //    }
+    
+    if ([[self getCellInfo:indexPath] isKindOfClass:[ZFTableViewCellFrameModel class]]) {
+        ZFTableViewCellFrameModel *cellInfo = (ZFTableViewCellFrameModel *)[self getCellInfo:indexPath];
+        return cellInfo.cellHeightF;
+    }else{
+        ZFTableViewCell *cell = [self getCellIndex:indexPath];
+        
+        if (cell != nil) {
+            return cell.frame.size.height;
+        }
+        
     }
     
-    ZFTableViewCell *cell = [self getCellIndex:indexPath];
-    
-    if (cell != nil) {
-        return cell.frame.size.height;
-    }
     
     return 70;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
-    
     ZFTableViewCell *cell;
-    //    = [self getCellIndex:indexPath cellInfo:cellInfo];
     
-    if (cell == nil) {
+    if ([[self getCellInfo:indexPath] isKindOfClass:[ZFTableViewCellFrameModel class]]) {
+        ZFTableViewCellFrameModel *cellInfo = (ZFTableViewCellFrameModel *)[self getCellInfo:indexPath];
+        cell =[[NSClassFromString(cellInfo.cellInfo.classCellName) alloc]initWithFrameModel:cellInfo];
+        cell.frameCellInfo = cellInfo;
+        return cell;
+    }else{
         
-        if (cellInfo.classCellName) {//如果cellClassName存在
-            //取出已注册的cell
-            cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.classCellName forIndexPath:indexPath];
-        }else if (cellInfo.xibCellName){//如果XibcellNmae存在
-            //取出已注册的cell
+        
+        
+        ZFTableViewCellModel *cellInfo = [self getCellInfo:indexPath];
+        
+        
+        if (cell == nil) {
             
-            cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.xibCellName forIndexPath:indexPath];
-            
-        }else if(cellInfo.cellName){
-            
-            cell =[tableView dequeueReusableCellWithIdentifier:cellInfo.cellName forIndexPath:indexPath];
-            
-        }else{
-            cell = [[ZFTableViewCell alloc] initWithStyle:!cellInfo.tableViewCellStyle? UITableViewCellStyleDefault:cellInfo.tableViewCellStyle reuseIdentifier:@"cell"];
-            if (cellInfo.title) {
-                cell.textLabel.text =cellInfo.title;
+            if (cellInfo.classCellName) {//如果cellClassName存在
+                //取出已注册的cell
+                cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.classCellName forIndexPath:indexPath];
+            }else if (cellInfo.xibCellName){//如果XibcellNmae存在
+                //取出已注册的cell
                 
+                cell = [tableView dequeueReusableCellWithIdentifier:cellInfo.xibCellName forIndexPath:indexPath];
+                
+            }else if(cellInfo.cellName){
+                
+                cell =[tableView dequeueReusableCellWithIdentifier:cellInfo.cellName forIndexPath:indexPath];
+                
+            }else{
+                cell = [[ZFTableViewCell alloc] initWithStyle:!cellInfo.tableViewCellStyle? UITableViewCellStyleDefault:cellInfo.tableViewCellStyle reuseIdentifier:@"cell"];
+                if (cellInfo.title) {
+                    cell.textLabel.text =cellInfo.title;
+                    
+                }
+                if (cellInfo.des) {
+                    cell.detailTextLabel.text = cellInfo.des;
+                }
+                if (cellInfo.imgName) {
+                    cell.imageView.image =[UIImage imageNamed:cellInfo.imgName];
+                }
             }
-            if (cellInfo.des) {
-                cell.detailTextLabel.text = cellInfo.des;
-            }
-            if (cellInfo.imgName) {
-                cell.imageView.image =[UIImage imageNamed:cellInfo.imgName];
-            }
+            //        cell = [[NSClassFromString(cellInfo.cellName) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellInfo.cellName];
+            
+            //        cell.textLabel.text = @"kjskjdnks";
         }
-        //        cell = [[NSClassFromString(cellInfo.cellName) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellInfo.cellName];
+        cell.cellInfo = cellInfo;
         
-        //        cell.textLabel.text = @"kjskjdnks";
     }
     UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-1, self.view.frame.size.width-20, 1)];
     v.backgroundColor = [UIColor lightGrayColor];
     [cell.contentView addSubview:v];
     
-    cell.cellInfo = cellInfo;
     
     return cell;
 }
@@ -228,8 +271,8 @@
 }
 
 //获取cellInfo
--(ZFTableViewCellModel *)getCellInfo:(NSIndexPath *)indexPath{
-    ZFTableViewCellModel *cellInfo;
+-(id)getCellInfo:(NSIndexPath *)indexPath{
+    id cellInfo;
     if (_isMoreSection == YES) {
         cellInfo = self.cellInfos[indexPath.section][indexPath.row];
     }else{

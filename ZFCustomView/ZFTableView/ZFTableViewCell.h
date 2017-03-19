@@ -16,9 +16,7 @@
 //CellFrameModel
 @property(nonatomic,retain)ZFTableViewCellFrameModel *frameCellInfo;
 
-
-
-//-(id)initWithModel:(ZFTableViewCellModel *)model;
+- (id)initWithFrameModel:(ZFTableViewCellFrameModel *)frameModel;
 
 
 @end

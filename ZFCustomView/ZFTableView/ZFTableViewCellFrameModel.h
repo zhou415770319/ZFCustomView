@@ -10,8 +10,11 @@
 #import "ZFTableViewCellModel.h"
 @interface ZFTableViewCellFrameModel : NSObject
 
-
+/** cellModel 信息 */
 @property(nonatomic,strong)ZFTableViewCellModel *cellInfo;
+
+/** cell的高度 */
+@property (nonatomic, assign) CGFloat cellHeightF;
 
 
 @end
