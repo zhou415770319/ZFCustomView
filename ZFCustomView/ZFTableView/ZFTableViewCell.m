@@ -10,6 +10,16 @@
 
 @implementation ZFTableViewCell
 
+
+-(id)initWithFrameModel:(ZFTableViewCellFrameModel *)frameModel{
+
+    self = [super init];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+    }
+    return self;
+}
+
 -(void)setCellInfo:(ZFTableViewCellModel *)cellInfo{
     
     if (_cellInfo != cellInfo) {
