@@ -196,6 +196,10 @@
         ZFTableViewCellFrameModel *cellInfo = (ZFTableViewCellFrameModel *)[self getCellInfo:indexPath];
         cell =[[NSClassFromString(cellInfo.cellInfo.classCellName) alloc]initWithFrameModel:cellInfo];
         cell.frameCellInfo = cellInfo;
+        if (cellInfo.cellInfo.isPop) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
+        }
+
         return cell;
     }else{
         
@@ -236,8 +240,9 @@
             //        cell.textLabel.text = @"kjskjdnks";
         }
         cell.cellInfo = cellInfo;
-        
-    }
+        if (cellInfo.isPop) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
+        }    }
     UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-1, self.view.frame.size.width-20, 1)];
     v.backgroundColor = [UIColor lightGrayColor];
     [cell.contentView addSubview:v];

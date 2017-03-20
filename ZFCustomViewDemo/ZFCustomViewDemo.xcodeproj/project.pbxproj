@@ -31,7 +31,7 @@
 		914132161E7ACD5200D87108 /* FrameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132151E7ACD5200D87108 /* FrameTableViewCell.m */; };
 		914132191E7ACDE800D87108 /* ZFTableViewCellFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 914132181E7ACDE800D87108 /* ZFTableViewCellFrameModel.m */; };
 		9141321C1E7ACE8A00D87108 /* FrameTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141321B1E7ACE8A00D87108 /* FrameTableViewCellModel.m */; };
-		914132201E7ACFB400D87108 /* ZFStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141321F1E7ACFB400D87108 /* ZFStringTool.m */; };
+		91D91BF11E7EABAB00B2A637 /* ZFStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D91BF01E7EABAB00B2A637 /* ZFStringTool.m */; };
 		91DB506B1E714DD800CBDB90 /* ZFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DB506A1E714DD800CBDB90 /* ZFTableView.m */; };
 		91DB506E1E714F0600CBDB90 /* Profile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91DB506D1E714F0600CBDB90 /* Profile.plist */; };
 		91DB50711E714FD000CBDB90 /* cellInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91DB50701E714FD000CBDB90 /* cellInfos.plist */; };
@@ -127,8 +127,8 @@
 		914132181E7ACDE800D87108 /* ZFTableViewCellFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableViewCellFrameModel.m; sourceTree = "<group>"; };
 		9141321A1E7ACE8A00D87108 /* FrameTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameTableViewCellModel.h; sourceTree = "<group>"; };
 		9141321B1E7ACE8A00D87108 /* FrameTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameTableViewCellModel.m; sourceTree = "<group>"; };
-		9141321E1E7ACFB400D87108 /* ZFStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFStringTool.h; sourceTree = "<group>"; };
-		9141321F1E7ACFB400D87108 /* ZFStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFStringTool.m; sourceTree = "<group>"; };
+		91D91BEF1E7EABAB00B2A637 /* ZFStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFStringTool.h; sourceTree = "<group>"; };
+		91D91BF01E7EABAB00B2A637 /* ZFStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFStringTool.m; sourceTree = "<group>"; };
 		91DB50691E714DD800CBDB90 /* ZFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableView.h; sourceTree = "<group>"; };
 		91DB506A1E714DD800CBDB90 /* ZFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableView.m; sourceTree = "<group>"; };
 		91DB506D1E714F0600CBDB90 /* Profile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Profile.plist; sourceTree = "<group>"; };
@@ -293,8 +293,6 @@
 		9141321D1E7ACFB400D87108 /* Tolls */ = {
 			isa = PBXGroup;
 			children = (
-				9141321E1E7ACFB400D87108 /* ZFStringTool.h */,
-				9141321F1E7ACFB400D87108 /* ZFStringTool.m */,
 			);
 			path = Tolls;
 			sourceTree = "<group>";
@@ -302,6 +300,8 @@
 		91DB4FFE1E70E9AD00CBDB90 /* ZFTableView */ = {
 			isa = PBXGroup;
 			children = (
+				91D91BEF1E7EABAB00B2A637 /* ZFStringTool.h */,
+				91D91BF01E7EABAB00B2A637 /* ZFStringTool.m */,
 				91DB50691E714DD800CBDB90 /* ZFTableView.h */,
 				91DB506A1E714DD800CBDB90 /* ZFTableView.m */,
 				91DB50A11E723EF900CBDB90 /* ZFTableViewCell.h */,
@@ -561,6 +561,7 @@
 				91DB50A91E724A4C00CBDB90 /* TestCellModel.m in Sources */,
 				914132191E7ACDE800D87108 /* ZFTableViewCellFrameModel.m in Sources */,
 				914131FF1E79240C00D87108 /* Demo2TableViewCell.m in Sources */,
+				91D91BF11E7EABAB00B2A637 /* ZFStringTool.m in Sources */,
 				913D947A1E1B83EC0070E853 /* UIButton+CountDown.m in Sources */,
 				913D94721E1B54740070E853 /* ZFButtonToll.m in Sources */,
 				914132031E79281900D87108 /* Demo3TableViewCell.m in Sources */,
@@ -569,7 +570,6 @@
 				91DB50A01E723DA800CBDB90 /* TestCell.m in Sources */,
 				91DB506B1E714DD800CBDB90 /* ZFTableView.m in Sources */,
 				913D947D1E1B967F0070E853 /* demoViewController.m in Sources */,
-				914132201E7ACFB400D87108 /* ZFStringTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

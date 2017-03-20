@@ -65,6 +65,10 @@
                 model.cellName = @"DemoTableViewCell";
 
             }
+            if ([dict objectForKey:@"isPop"]) {
+                model.isPop = [dict objectForKey:@"isPop"];
+            }
+            
             model.PopToViewController = @"PopDemoViewController";
             
             [temMArr addObject:model];
@@ -74,7 +78,7 @@
     
     self.cellInfos = mArr;
 //    [self.tableView reloadData];
-    NSLog(@"%@",arr);
+    NSLog(@"%@",mArr);
     
 }
 

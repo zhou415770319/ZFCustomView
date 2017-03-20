@@ -35,6 +35,13 @@
 //didSelectRow 需要跳转的controller
 @property(nonatomic,copy)NSString *PopToViewController;
 
+//是否显示箭头
+@property(nonatomic,assign)BOOL isPop;
+
+//是否可以展开  (在初始化的时候设置两种状态的cell)
+@property(nonatomic,assign)BOOL isOpen;
+
+
 //标题
 @property(nonatomic,copy)NSString *title;
 //图片名字

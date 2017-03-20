@@ -26,6 +26,8 @@
 			<string>zhouxxx</string>
 			<key>subTitle</key>
 			<string>zhouxxx</string>
+			<key>isPop</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>xibCellName</key>
