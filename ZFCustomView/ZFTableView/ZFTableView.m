@@ -7,6 +7,7 @@
 //
 
 #import "ZFTableView.h"
+#import "ZFPopBaseViewController.h"
 
 @interface ZFTableView()<UITableViewDelegate,UITableViewDataSource>
 
