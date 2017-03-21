@@ -58,6 +58,8 @@
 		91DB50AD1E7287FC00CBDB90 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DB50AC1E7287FC00CBDB90 /* TestViewController.m */; };
 		91DB50B11E728DED00CBDB90 /* TestLableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DB50AF1E728DED00CBDB90 /* TestLableCell.m */; };
 		91DB50B21E728DED00CBDB90 /* TestLableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DB50B01E728DED00CBDB90 /* TestLableCell.xib */; };
+		91F329ED1E80D3E400833FE1 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F329EC1E80D3E400833FE1 /* DemoViewController.m */; };
+		91F329EF1E80D7FC00833FE1 /* cellInfos2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91F329EE1E80D7FC00833FE1 /* cellInfos2.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +165,9 @@
 		91DB50AE1E728DED00CBDB90 /* TestLableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLableCell.h; sourceTree = "<group>"; };
 		91DB50AF1E728DED00CBDB90 /* TestLableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLableCell.m; sourceTree = "<group>"; };
 		91DB50B01E728DED00CBDB90 /* TestLableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestLableCell.xib; sourceTree = "<group>"; };
+		91F329EB1E80D3E400833FE1 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		91F329EC1E80D3E400833FE1 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		91F329EE1E80D7FC00833FE1 /* cellInfos2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cellInfos2.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +291,8 @@
 				914132001E79281900D87108 /* Demo3TableViewCell.h */,
 				914132011E79281900D87108 /* Demo3TableViewCell.m */,
 				914132021E79281900D87108 /* Demo3TableViewCell.xib */,
+				91F329EB1E80D3E400833FE1 /* DemoViewController.h */,
+				91F329EC1E80D3E400833FE1 /* DemoViewController.m */,
 			);
 			path = TableViewTest;
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 				91DB50721E71504400CBDB90 /* image */,
 				91DB506D1E714F0600CBDB90 /* Profile.plist */,
 				91DB509C1E723B4400CBDB90 /* cellInfos1.plist */,
+				91F329EE1E80D7FC00833FE1 /* cellInfos2.plist */,
 				91DB50701E714FD000CBDB90 /* cellInfos.plist */,
 			);
 			path = Resourse;
@@ -506,6 +514,7 @@
 				91DB506E1E714F0600CBDB90 /* Profile.plist in Resources */,
 				91DB508E1E71504400CBDB90 /* icon.xcassets in Resources */,
 				91DB50831E71504400CBDB90 /* 10.png in Resources */,
+				91F329EF1E80D7FC00833FE1 /* cellInfos2.plist in Resources */,
 				913D944A1E1B53930070E853 /* LaunchScreen.storyboard in Resources */,
 				91DB50B21E728DED00CBDB90 /* TestLableCell.xib in Resources */,
 				91DB508C1E71504400CBDB90 /* 8.png in Resources */,
@@ -562,6 +571,7 @@
 				914132191E7ACDE800D87108 /* ZFTableViewCellFrameModel.m in Sources */,
 				914131FF1E79240C00D87108 /* Demo2TableViewCell.m in Sources */,
 				91D91BF11E7EABAB00B2A637 /* ZFStringTool.m in Sources */,
+				91F329ED1E80D3E400833FE1 /* DemoViewController.m in Sources */,
 				913D947A1E1B83EC0070E853 /* UIButton+CountDown.m in Sources */,
 				913D94721E1B54740070E853 /* ZFButtonToll.m in Sources */,
 				914132031E79281900D87108 /* Demo3TableViewCell.m in Sources */,
