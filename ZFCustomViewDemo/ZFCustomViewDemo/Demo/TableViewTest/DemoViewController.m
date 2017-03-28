@@ -28,9 +28,6 @@
 -(void)initTableView{
     
     self.tab = [[ZFTableView alloc]initWithFrame:self.view.bounds];
-//    self.tab.delegate = self;
-//    self.tab.heightForRow = 200;
-//    self.tab.cellInfos = self.infos;
     
     self.tab.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tab];

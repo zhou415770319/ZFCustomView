@@ -56,7 +56,7 @@
 -(void)setupLineViewFrame{
     
         
-        _lineViewF =CGRectMake(PADDING_VIEW_VIEW, CGRectGetMaxY(_desF)+PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, 1);
+        _lineViewF =CGRectMake(PADDING_VIEW_VIEW, CGRectGetMaxY(_desF)+PADDING_VIEW_VIEW, ([UIScreen mainScreen].bounds.size.width)-2*PADDING_VIEW_VIEW, 0.5);
         
 }
 

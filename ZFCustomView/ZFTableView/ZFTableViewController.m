@@ -243,7 +243,7 @@
         if (cellInfo.isPop) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
         }    }
-    UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-1, self.view.frame.size.width-20, 1)];
+    UIView *v =[[UIView alloc]initWithFrame:CGRectMake(10, cell.frame.size.height-0.2, self.view.frame.size.width-20, 0.2)];
     v.backgroundColor = [UIColor lightGrayColor];
     [cell.contentView addSubview:v];
     
