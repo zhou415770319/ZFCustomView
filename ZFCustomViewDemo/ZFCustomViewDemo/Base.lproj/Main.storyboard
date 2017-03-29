@@ -185,6 +185,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cEr-NV-GAh"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uup-XG-09w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +231,19 @@
                     <view key="view" contentMode="scaleToFill" id="49f-XN-vhh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lW6-dj-GkE" customClass="ZFTableView">
+                                <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lW6-dj-GkE" firstAttribute="centerY" secondItem="49f-XN-vhh" secondAttribute="centerY" id="FM6-E5-fJh"/>
+                            <constraint firstItem="lW6-dj-GkE" firstAttribute="centerX" secondItem="49f-XN-vhh" secondAttribute="centerX" id="hkw-7a-DBf"/>
+                            <constraint firstItem="lW6-dj-GkE" firstAttribute="height" secondItem="49f-XN-vhh" secondAttribute="height" id="ot2-dB-Nxn"/>
+                            <constraint firstItem="lW6-dj-GkE" firstAttribute="width" secondItem="49f-XN-vhh" secondAttribute="width" id="y07-Sj-lEN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BOT-CX-ity"/>
                 </viewController>
