@@ -246,7 +246,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="1d4-bh-fBb" kind="relationship" relationship="rootViewController" id="MpN-cR-em1"/>
+                        <segue destination="QEJ-to-Lja" kind="relationship" relationship="rootViewController" id="MtR-XJ-cCe"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thD-8p-VmM" userLabel="First Responder" sceneMemberID="firstResponder"/>

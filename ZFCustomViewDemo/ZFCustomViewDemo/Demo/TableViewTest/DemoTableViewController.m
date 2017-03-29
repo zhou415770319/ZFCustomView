@@ -29,8 +29,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
 -(void)initTableView{
+    
+    
+//    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, SCREENWIDTH, 140)];
+//    lab.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:lab];
     
 //    self.tableView.delegate = self;
 //    self.tableView.dataSource = self;
