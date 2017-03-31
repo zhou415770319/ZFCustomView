@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = "ZFCustomView"
-s.version          = "0.1.3.7"
+s.version          = "0.1.3.10"
 s.summary          = "A custom view used on iOS."
 s.description      = <<-DESC
 It is a marquee view used on iOS, which implement by Swift.
@@ -16,9 +16,11 @@ s.platform     = :ios, '7.0'
 # s.ios.deployment_target = '5.0'
 # s.osx.deployment_target = '10.7'
 s.requires_arc = true
- 
-s.source_files = 'ZFCustomView/ZFTableView/*'
 
+s.source_files = 'ZFCustomView/*.{h,m}' 
+s.source_files = 'ZFCustomView/ZFTableView/*'
+s.source_files = 'ZFCustomView/UIButton/*'
+s.source_files = 'ZFCustomView/**/*'
 # s.frameworks = 'Foundation', 'CoreGraphics', 'UIKit'
  
 end
