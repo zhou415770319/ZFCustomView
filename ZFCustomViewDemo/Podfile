@@ -1,0 +1,19 @@
+platform :ios,'8.0'
+
+target "ZFCustomViewDemo" do
+    
+    pod 'Masonry'
+
+    pod 'AFNetworking'
+    
+    pod 'BmobSDK'
+    
+    pod 'SDWebImage'
+    
+    pod 'MJExtension'
+
+    pod 'FMDB'
+
+    pod 'MJRefresh'
+
+end

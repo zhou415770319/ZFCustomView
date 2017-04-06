@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9137754B1E8DE77E0087C547 /* FunctionInfos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9137754A1E8DE77E0087C547 /* FunctionInfos.plist */; };
 		913D94401E1B53930070E853 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D943F1E1B53930070E853 /* AppDelegate.swift */; };
 		913D94421E1B53930070E853 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D94411E1B53930070E853 /* ViewController.swift */; };
 		913D94451E1B53930070E853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 913D94431E1B53930070E853 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		91DB50B21E728DED00CBDB90 /* TestLableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91DB50B01E728DED00CBDB90 /* TestLableCell.xib */; };
 		91F329ED1E80D3E400833FE1 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F329EC1E80D3E400833FE1 /* DemoViewController.m */; };
 		91F329EF1E80D7FC00833FE1 /* cellInfos2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91F329EE1E80D7FC00833FE1 /* cellInfos2.plist */; };
+		CB4B43F8B28E44B6D8FD45F2 /* libPods-ZFCustomViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF02F320C51594FE80F0E1B /* libPods-ZFCustomViewDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02806A4CA102C55387D46CBB /* Pods-ZFCustomViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFCustomViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZFCustomViewDemo/Pods-ZFCustomViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		0854A28D01B9295BE36DC7DA /* Pods-ZFCustomViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZFCustomViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZFCustomViewDemo/Pods-ZFCustomViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3FF02F320C51594FE80F0E1B /* libPods-ZFCustomViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZFCustomViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9137754A1E8DE77E0087C547 /* FunctionInfos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FunctionInfos.plist; sourceTree = "<group>"; };
 		913D943C1E1B53930070E853 /* ZFCustomViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZFCustomViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		913D943F1E1B53930070E853 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		913D94411E1B53930070E853 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4B43F8B28E44B6D8FD45F2 /* libPods-ZFCustomViewDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +202,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22AB56DF4409F84D197A24B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FF02F320C51594FE80F0E1B /* libPods-ZFCustomViewDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		913775491E8DE55B0087C547 /* ZFTableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ZFTableViewDemo;
+			sourceTree = "<group>";
+		};
 		913D94331E1B53930070E853 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +224,8 @@
 				913D94531E1B53930070E853 /* ZFCustomViewDemoTests */,
 				913D945E1E1B53930070E853 /* ZFCustomViewDemoUITests */,
 				913D943D1E1B53930070E853 /* Products */,
+				C84DCE7C3CD76DFA4A508B36 /* Pods */,
+				22AB56DF4409F84D197A24B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,6 +357,7 @@
 				91DB509C1E723B4400CBDB90 /* cellInfos1.plist */,
 				91F329EE1E80D7FC00833FE1 /* cellInfos2.plist */,
 				91DB50701E714FD000CBDB90 /* cellInfos.plist */,
+				9137754A1E8DE77E0087C547 /* FunctionInfos.plist */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
@@ -377,6 +402,7 @@
 		91DB508F1E71508300CBDB90 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				913775491E8DE55B0087C547 /* ZFTableViewDemo */,
 				9141321D1E7ACFB400D87108 /* Tolls */,
 				914131F61E791AAF00D87108 /* TableViewTest */,
 				91DB50AB1E7287FC00CBDB90 /* TestViewController.h */,
@@ -394,6 +420,15 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
+		C84DCE7C3CD76DFA4A508B36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02806A4CA102C55387D46CBB /* Pods-ZFCustomViewDemo.debug.xcconfig */,
+				0854A28D01B9295BE36DC7DA /* Pods-ZFCustomViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -401,9 +436,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 913D94641E1B53930070E853 /* Build configuration list for PBXNativeTarget "ZFCustomViewDemo" */;
 			buildPhases = (
+				BD014E61E3564C9917A30924 /* [CP] Check Pods Manifest.lock */,
 				913D94381E1B53930070E853 /* Sources */,
 				913D94391E1B53930070E853 /* Frameworks */,
 				913D943A1E1B53930070E853 /* Resources */,
+				520A8F48B8EE3A8CDC487BB6 /* [CP] Embed Pods Frameworks */,
+				BC0C98699F4E9FA102419F86 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -507,6 +545,7 @@
 			files = (
 				91DB50861E71504400CBDB90 /* 2.png in Resources */,
 				91DB50851E71504400CBDB90 /* 12.png in Resources */,
+				9137754B1E8DE77E0087C547 /* FunctionInfos.plist in Resources */,
 				91DB50811E71504400CBDB90 /* 0.png in Resources */,
 				91DB508D1E71504400CBDB90 /* 9.png in Resources */,
 				91DB50881E71504400CBDB90 /* 4.png in Resources */,
@@ -546,6 +585,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		520A8F48B8EE3A8CDC487BB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZFCustomViewDemo/Pods-ZFCustomViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC0C98699F4E9FA102419F86 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZFCustomViewDemo/Pods-ZFCustomViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD014E61E3564C9917A30924 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		913D94381E1B53930070E853 /* Sources */ = {
@@ -729,6 +816,7 @@
 		};
 		913D94651E1B53930070E853 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02806A4CA102C55387D46CBB /* Pods-ZFCustomViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -748,6 +836,7 @@
 		};
 		913D94661E1B53930070E853 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0854A28D01B9295BE36DC7DA /* Pods-ZFCustomViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
