@@ -135,6 +135,7 @@
 		914132181E7ACDE800D87108 /* ZFTableViewCellFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableViewCellFrameModel.m; sourceTree = "<group>"; };
 		9141321A1E7ACE8A00D87108 /* FrameTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameTableViewCellModel.h; sourceTree = "<group>"; };
 		9141321B1E7ACE8A00D87108 /* FrameTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameTableViewCellModel.m; sourceTree = "<group>"; };
+		91AED24F1E9CC2D700933AB9 /* ZFCustomViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFCustomViewHeader.h; sourceTree = "<group>"; };
 		91D91BEF1E7EABAB00B2A637 /* ZFStringTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFStringTool.h; sourceTree = "<group>"; };
 		91D91BF01E7EABAB00B2A637 /* ZFStringTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFStringTool.m; sourceTree = "<group>"; };
 		91DB50691E714DD800CBDB90 /* ZFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableView.h; sourceTree = "<group>"; };
@@ -274,6 +275,7 @@
 				91DB4FFE1E70E9AD00CBDB90 /* ZFTableView */,
 				913D94741E1B83EC0070E853 /* UIButton */,
 				913D946E1E1B543A0070E853 /* ZFCustomView.h */,
+				91AED24F1E9CC2D700933AB9 /* ZFCustomViewHeader.h */,
 				913D94701E1B54740070E853 /* ZFButtonToll.h */,
 				913D946F1E1B54740070E853 /* ZFCustomViewDemo-Bridging-Header.h */,
 				913D94711E1B54740070E853 /* ZFButtonToll.m */,

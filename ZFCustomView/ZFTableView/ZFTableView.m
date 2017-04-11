@@ -8,6 +8,7 @@
 
 #import "ZFTableView.h"
 #import "ZFPopBaseViewController.h"
+#import "ZFCustomViewHeader.h"
 
 @interface ZFTableView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -113,7 +114,7 @@
     if (self) {
         //去除分割线
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
+        self.backgroundColor = COLOR_e7e7e7;
         self.delegate =self;
         self.dataSource =self;
         
@@ -240,7 +241,7 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; //显示最右边的箭头
         }    }
     UIView *v =[[UIView alloc]initWithFrame:CGRectMake(0, cell.frame.size.height-0.5, self.frame.size.width-0, 0.5)];
-    v.backgroundColor = [UIColor lightGrayColor];
+    v.backgroundColor = COLOR_dadada;
     [cell.contentView addSubview:v];
     
     
